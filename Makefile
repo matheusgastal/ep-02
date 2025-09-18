@@ -1,14 +1,16 @@
 # PROGRAMA
-    PROG = resolveEDO
-    OBJS = $(PROG).o edo.o utils.o # mod1.o mod2.o
-     VERIF = verificaEP02
+PROG = resolveEDO
+OBJS = $(PROG).o edo.o utils.o gs.o
+VERIF = verificaEP02
 
 # Compilador
-    CC     = gcc
+CC     = gcc
 
 # Acrescentar onde apropriado as opções para incluir uso da biblioteca LIKWID
-    CFLAGS = -O0
-    LFLAGS = -lm
+CFLAGS = -O0 -std=c11 -Wall
+LFLAGS = -lm -lrt
+CFLAGS += -DLIKWID_PERFMON
+LFLAGS += -llikwid
 
 # Lista de arquivos para distribuição. Acrescentar mais arquivos se necessário.
 DISTFILES = *.c *.h LEIAME* Makefile *.dat
@@ -16,9 +18,10 @@ DISTDIR = ${USER}
 
 .PHONY: clean purge dist all
 
+all: $(PROG) $(VERIF)
+
 %.o: %.c %.h utils.h
 	$(CC) -c $(CFLAGS) -o $@ $<
-
 $(PROG): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^ $(LFLAGS)
 

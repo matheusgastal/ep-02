@@ -1,7 +1,7 @@
+#define _POSIX_C_SOURCE 200809
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-
 #include "utils.h"
 
 /*  Retorna tempo em milisegundos desde EPOCH

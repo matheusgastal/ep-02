@@ -5,6 +5,11 @@
 #include "utils.h"
 #include "edo.h"
 
+//Matheus Gastal Magalhães
+//GRR20244620
+
+
+
 Tridiag *genTridiag (EDo *edo)
 {
   Tridiag *sl;

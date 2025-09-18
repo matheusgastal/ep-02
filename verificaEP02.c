@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+//Matheus Gastal Magalhães
+//GRR20244620
+
 int main() {
 
   int n,k,it;
